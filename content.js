@@ -15,6 +15,29 @@ box.style.paddingRight = "2px";
 
 box.style.display = "none"; // Initially hide the bo
 
+box.addEventListener("click", handleBoxClick);
+
+function handleBoxClick() {
+    toggleOnOff();
+}
+
+
+let isOn = false;
+
+// Function to toggle the on/off state and update the box content
+function toggleOnOff() {
+    isOn = !isOn;
+    if (isOn) {
+        // box.style.background = "#c9c0c0"
+        box.style.outline = "1px dashed gray"
+    } else {
+        // box.style.background = "white"
+        box.style.outline = "none"
+    }
+
+}
+
+
 // Function to update the content of the box
 function updateBoxContent(content) {
     box.innerText = content;
@@ -56,7 +79,10 @@ function handleHoverEvent(event) {
     const target = event.target;
     //   target.style.backgroundColor = "#fff";
     oldStyle = target.style.outline;
-    target.style.outline = "3px dashed gray"
+    if (isOn) {
+        target.style.outline = "3px dashed gray"
+    }
+
     // You can perform other actions here based on the hovered element
 
 
