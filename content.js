@@ -5,6 +5,7 @@ box.style.right = "10px";
 box.style.width = "120px";
 box.style.height = "20px";
 box.style.backgroundColor = "white";
+box.style.color = "black";
 box.style.border = "1px solid black";
 box.style.zIndex = "9999";
 box.style.fontSize = "10px";
