@@ -18,11 +18,11 @@ Because other extensions would only show overall number for whole page. This is 
 
 ## Todo:
 - [x] Change border sizes to something more nice. 
-- [] On/Off switch for extension, now it just do for all pages, all elements.
-- [] Migrate to [Extension manifest v3](https://developer.chrome.com/blog/mv2-transition/).
-- [] Publish to Chrome extension store.
-- [] Code clean up.
-- [] Add AI.
+- [ ] On/Off switch for extension, now it just do for all pages, all elements.
+- [x] Migrate to [Extension manifest v3](https://developer.chrome.com/blog/mv2-transition/).
+- [ ] Publish to Chrome extension store.
+- [ ] Code clean up.
+- [ ] Add AI.
 
 ## Install (Dev)
 
