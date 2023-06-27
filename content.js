@@ -11,7 +11,12 @@ box.style.zIndex = "9999";
 box.style.fontSize = "10px";
 box.style.textAlign = "right";
 box.style.paddingRight = "4px";
-box.style.paddingTop = "4px";
+box.style.display = "flex";
+box.style.alignContent = "center";
+box.style.flexWrap = "wrap";
+box.style.justifyContent = "flex-end";
+
+// box.style.paddingTop = "4px";
 
 box.style.display = "none";
 
@@ -38,7 +43,7 @@ function updateBoxContent(content) {
 }
 
 function showBox() {
-    box.style.display = "block";
+    box.style.display = "flex";
 }
 
 function hideBox() {
@@ -53,8 +58,12 @@ function getPageSource() {
 
 
 function countWords(text) {
-    const words = text.trim().split(/\s+/);
-    return words.length;
+    if (text && text.length > 0) {
+        const words = text.trim().split(/\s+/);
+        return words.length;
+    } else {
+        return 0;
+    }
 }
 
 function convertToTimeToRead(wordCount, readingSpeed) {
