@@ -1,5 +1,3 @@
-
-// Create a small box element
 const box = document.createElement("div");
 box.style.position = "fixed";
 box.style.top = "10px";
@@ -11,9 +9,10 @@ box.style.border = "1px solid black";
 box.style.zIndex = "9999";
 box.style.fontSize = "10px";
 box.style.textAlign = "right";
-box.style.paddingRight = "2px";
+box.style.paddingRight = "4px";
+box.style.paddingTop = "4px";
 
-box.style.display = "none"; // Initially hide the bo
+box.style.display = "none";
 
 box.addEventListener("click", handleBoxClick);
 
@@ -24,39 +23,29 @@ function handleBoxClick() {
 
 let isOn = false;
 
-// Function to toggle the on/off state and update the box content
 function toggleOnOff() {
     isOn = !isOn;
     if (isOn) {
-        // box.style.background = "#c9c0c0"
         box.style.outline = "1px dashed gray"
     } else {
-        // box.style.background = "white"
         box.style.outline = "none"
     }
-
 }
 
-
-// Function to update the content of the box
 function updateBoxContent(content) {
     box.innerText = content;
 }
 
-// Function to show the box
 function showBox() {
     box.style.display = "block";
 }
 
-// Function to hide the box
 function hideBox() {
     box.style.display = "none";
 }
 
-// Append the box element to the document body
 document.body.appendChild(box);
 
-// Function to get the HTML source of the page
 function getPageSource() {
     return document.documentElement.outerHTML;
 }
@@ -74,17 +63,12 @@ function convertToTimeToRead(wordCount, readingSpeed) {
 
 let oldStyle = {}
 
-// Function to handle mouse hover events
 function handleHoverEvent(event) {
     const target = event.target;
-    //   target.style.backgroundColor = "#fff";
     oldStyle = target.style.outline;
     if (isOn) {
         target.style.outline = "3px dashed gray"
     }
-
-    // You can perform other actions here based on the hovered element
-
 
     const text = event.target.innerText;
     const wordCount = countWords(text);
@@ -97,16 +81,12 @@ function handleHoverEvent(event) {
 
     updateBoxContent(`TTR: ${ttr}m, WC: ${wordCount}`);
 
-
-    // Update the content of the box with the tag name of the hovered element
-    // updateBoxContent(`hi ${target.tagName}`);
     showBox();
 }
 
-// Function to handle mouseout events
+
 function handleMouseoutEvent(event) {
     const target = event.target;
-    //   target.style.backgroundColor = ""; // Remove the yellow background
     target.style.outline = oldStyle;
     hideBox();
 }
